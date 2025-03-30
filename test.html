@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Button</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0d0221;
+            margin: 0;
+        }
+
+        .mic {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background-color: #3e1f92;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px 10px #1c084f;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        .mic::before, .mic::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .mic::before {
+            width: 400px;
+            height: 400px;
+            background-color: #180646;
+            box-shadow: 0 0 20px 20px #1c084f;
+        }
+
+        .mic::after {
+            width: 250px;
+            height: 250px;
+            background-color: #2f1e5f;
+            animation: circle-size 9.8s linear infinite alternate;
+        }
+
+        @keyframes circle-size {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 0.7;
+            }
+        }
+
+        .mic-icon {
+            font-size: 40px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="mic">
+        <i class="mic-icon">🎤</i>
+    </div>
+</body>
+</html>
